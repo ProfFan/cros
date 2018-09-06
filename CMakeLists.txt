@@ -38,3 +38,11 @@ else()
                           WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
                           COMMENT "Generating API documentation with Doxygen" VERBATIM)
 endif()
+
+install(DIRECTORY include/ DESTINATION include/cros
+        FILES_MATCHING PATTERN "*.h")
+
+install(TARGETS cros
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
